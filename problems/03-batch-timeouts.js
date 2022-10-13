@@ -36,10 +36,23 @@ cd at index goes with delay's index
 returns array
 same length
 can loop
+maybe make helper function for looping
 ***********************************************************************/
+// function timeoutObjs(...array) {
+//   let newArray = []
+//   array.forEach((el, i) => {
+//     newArray.push(el)
+//   })
+//   return newArray
+// }
 
 function batchTimeouts(callbacks, delays) {
-  setTimeout()
+  let array = []
+  callbacks.forEach((el, i) => {
+    array.push(setTimeout(el, delays[i]))
+
+  })
+  return array
 }
 
 const sayHello = () => console.log('hi');
